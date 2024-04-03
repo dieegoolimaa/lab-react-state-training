@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 const Counter = () => {
+  // Declare a new state variable
   const [count, setCount] = useState(0);
 
+  // Create event handlers
   const increment = () => {
-    setCount((prevCount) => Math.max(prevCount + 1, 0));
+    if (count > 0) {
+      setCount(count + 1);
+    }
   };
 
   const decrement = () => {
-    setCount((prevCount) => Math.max(prevCount - 1, 0));
+    setCount(count - 1);
   };
 
   return (
     <div>
-      <button onClick={decrement}> - </button>
+      <button type="button" onClick={decrement}>
+        {" "}
+        -{" "}
+      </button>
       <span>{count}</span>
-      <button onClick={increment}> + </button>
+      <button type="button" onClick={increment}>
+        {" "}
+        +{" "}
+      </button>
     </div>
   );
 };

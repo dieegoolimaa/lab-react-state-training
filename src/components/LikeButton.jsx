@@ -7,7 +7,11 @@ const LikeButton = () => {
     setLikes(likes + 1);
   };
 
-  return <button onClick={handleClick}>{likes} Likes</button>;
+  return (
+    <button type="button" onClick={handleClick}>
+      {likes} Likes
+    </button>
+  );
 };
 
 export default LikeButton;
